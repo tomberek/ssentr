@@ -34,7 +34,9 @@ func (m Middleware) watchFiles() chan string {
 						return
 					}
 					m.log.Fatal("fsnotify had error", zap.Error(err))
-					// Debounce
+
+				// Debounce and hack to deal with how some editors remove
+				// replace files instead of only a write
 				case <-time.After(100 * time.Millisecond):
 					if _, exists := m.listMap[event.Name]; exists {
 						ch <- event.Name
