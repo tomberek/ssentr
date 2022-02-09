@@ -6,7 +6,7 @@
       name = "ssentr";
       src = self;
       vendorSha256 = "sha256-L1TzJ6gAbMRVuALsGSRioXU6eQdMCHlbkEmeR4qz4Lg=";
-      meta = with nixpkgs.legacyPackage.x86_64-linux.lib; {
+      meta = with nixpkgs.legacyPackages.x86_64-linux.lib; {
         maintainers = [ maintainers.tomberek ];
         platforms = platforms.linux;
         license = licenses.mit;
