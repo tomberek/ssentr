@@ -2,10 +2,10 @@
   description = "Send SSE when files change";
   outputs = { self, nixpkgs }: {
 
-    packages.x86_64-linux.ssentr = nixpkgs.legacyPackages.x86_64-linux.buildGoModule {
+    packages.x86_64-linux.ssentr = nixpkgs.legacyPackages.x86_64-linux.buildGo118Module {
       name = "ssentr";
       src = self;
-      vendorSha256 = "sha256-L1TzJ6gAbMRVuALsGSRioXU6eQdMCHlbkEmeR4qz4Lg=";
+      vendorSha256 = "sha256-BsC8m8DUJoER63sJIBXuwr54zA0gGj+BM5aLc1sSEuU=";
       meta = with nixpkgs.legacyPackages.x86_64-linux.lib; {
         maintainers = [ maintainers.tomberek ];
         platforms = platforms.linux;
