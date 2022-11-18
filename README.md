@@ -37,6 +37,20 @@ end
 
 When any of the files change, a message will be sent to any connection to http://localhost:8085/reloader
 
+# Building
+
+With [nix](https://nixos.org/download.html)
+```
+nix build
+ls | ./result/bin/ssentr run
+```
+
+With [xcaddy](https://github.com/caddyserver/xcaddy)
+```
+xcaddy build --with github.com/tomberek/ssentr/reloader
+ls | ./caddy run
+```
+
 # Credit
 Based on and is an extension of [Caddy](https://caddyserver.com/)
 Inspired by [entr(1)](https://eradman.com/entrproject/)
