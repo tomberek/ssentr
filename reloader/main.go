@@ -52,6 +52,7 @@ func (m *Middleware) Provision(ctx caddy.Context) error {
 
 	m.listMap = make(map[string]bool)
 	m.dirsMap = make(map[string]bool)
+	m.log.Info("reading stdin for reloader")
 	scanner := bufio.NewScanner(os.Stdin)
 	for scanner.Scan() {
 		n := scanner.Text()

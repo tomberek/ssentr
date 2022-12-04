@@ -5,7 +5,7 @@
     packages.x86_64-linux.ssentr = nixpkgs.legacyPackages.x86_64-linux.buildGo118Module {
       name = "ssentr";
       src = self;
-      vendorSha256 = "sha256-BsC8m8DUJoER63sJIBXuwr54zA0gGj+BM5aLc1sSEuU=";
+      vendorSha256 = "sha256-3d5iPPz6iccXq1kJyp6IgyQBGlKI0yZUKZIedeuDzz8=";
       meta = with nixpkgs.legacyPackages.x86_64-linux.lib; {
         maintainers = [ maintainers.tomberek ];
         platforms = platforms.linux;

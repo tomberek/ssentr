@@ -5,11 +5,15 @@ Send SSE when files change.
 Setup:
 ```
 $ cat Caddyfile
-http://localhost:8085
-route /reload {
-	header Access-Control-Allow-Origin *
-	header Access-Control-Request-Method GET
-    reloader
+{
+	http_port 8085
+}
+:8085 {
+	route /reload {
+		header Access-Control-Allow-Origin *
+		header Access-Control-Request-Method GET
+		reloader
+	}
 }
 ```
 
