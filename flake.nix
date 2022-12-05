@@ -4,9 +4,9 @@
     self,
     nixpkgs,
   }: rec {
-    packages.x86_64-linux.ssentr = nixpkgs.legacyPackages.x86_64-linux.callPackage blueprints.ssentr {src = self;};
+    packages.x86_64-linux.ssentr = nixpkgs.legacyPackages.x86_64-linux.callPackage blueprints.ssentr {};
     blueprints.ssentr = {
-      src,
+      src ? self,
       lib,
       buildGo118Module,
     }:
