@@ -12,7 +12,7 @@
     }:
       buildGo118Module {
         name = "ssentr";
-        src = src;
+        src = self.outPath;
         vendorSha256 = "sha256-3d5iPPz6iccXq1kJyp6IgyQBGlKI0yZUKZIedeuDzz8=";
         meta = with lib; {
           maintainers = [maintainers.tomberek];
