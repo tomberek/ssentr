@@ -12,14 +12,17 @@
     }:
       buildGo118Module {
         name = "ssentr";
-        src = self.outPath;
+        src = builtins.path {
+          path = ./.;
+          name = "ssentr";
+        };
         vendorSha256 = "sha256-3d5iPPz6iccXq1kJyp6IgyQBGlKI0yZUKZIedeuDzz8=";
         meta = with lib; {
           maintainers = [maintainers.tomberek];
           platforms = platforms.linux;
           license = licenses.mit;
         };
-      };
+     };
     defaultPackage.x86_64-linux = self.packages.x86_64-linux.ssentr;
 
     apps.x86_64-linux.update = {
